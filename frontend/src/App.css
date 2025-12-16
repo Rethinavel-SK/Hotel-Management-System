@@ -46,48 +46,61 @@ body {
 .navbar {
   background: #2c3e50;
   color: white;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-container {
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 60px;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   color: white;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-user {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .logout-btn {
   background: #e74c3c;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  white-space: nowrap;
+  font-size: 0.85rem;
 }
 
 .logout-btn:hover {
@@ -347,12 +360,14 @@ th {
 .hero {
   background-size: cover;
   background-position: center;
-  height: 70vh;
+  height: calc(100vh - 60px);
+  min-height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   text-align: center;
+  position: relative;
 }
 
 .hero-content h1 {
@@ -377,10 +392,11 @@ th {
 
 .live-info {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .live-item {
@@ -394,6 +410,9 @@ th {
   border: 1px solid rgba(255,255,255,0.2);
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 140px;
+  justify-content: center;
 }
 
 .live-item:hover {
@@ -407,6 +426,7 @@ th {
   justify-content: center;
   margin-bottom: 3rem;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .hero-btn {
@@ -421,6 +441,8 @@ th {
   text-transform: uppercase;
   letter-spacing: 1px;
   animation: fadeInUp 1s ease-out 0.4s both;
+  white-space: nowrap;
+  min-width: 180px;
 }
 
 .hero-btn.primary {
@@ -448,9 +470,10 @@ th {
 
 .hero-features {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .hero-feature {
@@ -464,6 +487,9 @@ th {
   border: 1px solid rgba(255,255,255,0.2);
   font-weight: 500;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 140px;
+  justify-content: center;
 }
 
 .hero-feature:hover {
@@ -1162,6 +1188,138 @@ th {
 }
 
 /* Responsive Updates */
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+  
+  .nav-logo {
+    font-size: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .hero-btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.85rem;
+    min-width: 200px;
+  }
+  
+  .live-info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .live-item {
+    min-width: 180px;
+  }
+  
+  .hero-features {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* iPhone SE and smaller devices */
+@media (max-width: 375px) {
+  .navbar {
+    padding: 0.4rem 0;
+  }
+  
+  .nav-container {
+    padding: 0 0.5rem;
+    height: 45px;
+  }
+  
+  .nav-logo {
+    font-size: 0.9rem;
+  }
+  
+  .nav-link {
+    padding: 0.2rem 0.3rem;
+    font-size: 0.75rem;
+  }
+  
+  .logout-btn {
+    padding: 0.25rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  
+  .hero {
+    height: calc(100vh - 45px);
+    min-height: 350px;
+  }
+  
+  .hero-content h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .hero-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+    min-width: 180px;
+  }
+  
+  .live-info {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .live-item {
+    padding: 0.5rem 0.8rem;
+    min-width: 160px;
+    font-size: 0.85rem;
+  }
+  
+  .hero-features {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .hero-feature {
+    padding: 0.8rem 1rem;
+    min-width: 140px;
+    font-size: 0.85rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .welcome h2, .room-types h2, .available-rooms h2 {
+    font-size: 2rem;
+  }
+  
+  .room-type-card, .room-showcase-card {
+    margin: 0 0.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .menu-toggle {
     top: 1.5rem;
@@ -1188,6 +1346,7 @@ th {
     padding: 0.6rem 1rem;
     font-size: 0.8rem;
   }
+  
   .welcome-highlights {
     grid-template-columns: 1fr;
   }
@@ -1240,6 +1399,12 @@ th {
   width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 .about, .rooms-showcase, .contact {
@@ -1416,24 +1581,106 @@ th {
 .nav-link {
   color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
   transition: background 0.3s;
+  white-space: nowrap;
+  font-size: 0.9rem;
 }
 
 .nav-link:hover {
   background: rgba(255,255,255,0.1);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+  .nav-link {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
   .nav-container {
-    flex-direction: column;
-    gap: 1rem;
+    padding: 0 1.5rem;
   }
   
   .hero-content h1 {
-    font-size: 2rem;
+    font-size: 3.2rem;
+  }
+  
+  .hero-btn {
+    padding: 1rem 2.5rem;
+    min-width: 160px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .nav-container {
+    padding: 0 0.8rem;
+    height: 50px;
+  }
+  
+  .nav-logo {
+    font-size: 1rem;
+  }
+  
+  .nav-menu {
+    gap: 0.4rem;
+  }
+  
+  .nav-user span {
+    display: none;
+  }
+  
+  .logout-btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .logout-btn span {
+    display: none;
+  }
+  
+  .hero {
+    height: calc(100vh - 50px);
+    min-height: 400px;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    gap: 1rem;
+  }
+  
+  .hero-btn {
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+    min-width: 150px;
+  }
+  
+  .live-info {
+    gap: 1rem;
+  }
+  
+  .live-item {
+    padding: 0.6rem 1rem;
+    min-width: 120px;
+  }
+  
+  .hero-features {
+    gap: 1rem;
   }
   
   .about-content {
@@ -1445,7 +1692,7 @@ th {
   }
   
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   
   .form {
