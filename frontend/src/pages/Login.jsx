@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/common/AuthContext';
 import { authAPI } from '../services/api';
 import { toast } from 'react-toastify';
+import loginImage from '../assets/login.jpg';
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -29,30 +30,32 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <form className="auth-form" onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <input
-          type="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={(e) => setFormData({...formData, email: e.target.value})}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={(e) => setFormData({...formData, password: e.target.value})}
-          required
-        />
-        <button type="submit" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-        <p>
-          Don't have an account? <Link to="/register">Register</Link>
-        </p>
-      </form>
+    <div className="auth-page-fullbg" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${loginImage})`}}>
+      <div className="auth-form-container">
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <h2>Login to Your Account</h2>
+          <input
+            type="email"
+            placeholder="Email Address"
+            value={formData.email}
+            onChange={(e) => setFormData({...formData, email: e.target.value})}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={formData.password}
+            onChange={(e) => setFormData({...formData, password: e.target.value})}
+            required
+          />
+          <button type="submit" disabled={loading}>
+            {loading ? 'Signing In...' : 'Sign In'}
+          </button>
+          <p>
+            New to Grand Palace? <Link to="/register">Create Account</Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

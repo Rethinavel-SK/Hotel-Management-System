@@ -22,7 +22,7 @@ const Home = () => {
   const [checkOut, setCheckOut] = useState('');
   const [guests, setGuests] = useState(1);
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [menuOpen, setMenuOpen] = useState(false);
+
   const { user } = useAuth();
   const navigate = useNavigate();
 
@@ -74,39 +74,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Menu Toggle Button */}
-      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
 
-      {/* Side Navigation Menu */}
-      <div className={`side-menu ${menuOpen ? 'open' : ''}`}>
-        <div className="menu-item" onClick={() => {scrollToSection('hero'); setMenuOpen(false);}}>
-          <span>Home</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('welcome'); setMenuOpen(false);}}>
-          <span>About</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('room-types'); setMenuOpen(false);}}>
-          <span>Rooms</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('available-rooms'); setMenuOpen(false);}}>
-          <span>Available</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('floating-features'); setMenuOpen(false);}}>
-          <span>Services</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('hotel-gallery'); setMenuOpen(false);}}>
-          <span>Gallery</span>
-        </div>
-        <div className="menu-item" onClick={() => {scrollToSection('contact'); setMenuOpen(false);}}>
-          <span>Contact</span>
-        </div>
-      </div>
       {/* Hero Section */}
       <section id="hero" className="hero" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${hotelImage})`}}>
         <div className="hero-content">

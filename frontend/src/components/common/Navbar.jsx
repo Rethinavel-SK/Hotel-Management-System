@@ -32,12 +32,18 @@ const Navbar = () => {
               </div>
               <button onClick={logout} className="logout-btn">
                 <LogOut size={20} />
-                Logout
+                <span>Logout</span>
               </button>
             </>
           ) : (
             <>
               <Link to="/" className="nav-link">Home</Link>
+              <Link to="/#welcome" className="nav-link">About</Link>
+              <Link to="/#room-types" className="nav-link">Rooms</Link>
+              <Link to="/#available-rooms" className="nav-link">Available</Link>
+              <Link to="/#floating-features" className="nav-link">Services</Link>
+              <Link to="/#hotel-gallery" className="nav-link">Gallery</Link>
+              <Link to="/#contact" className="nav-link">Contact</Link>
               <Link to="/login" className="nav-link">Login</Link>
               <Link to="/register" className="nav-link">Sign Up</Link>
             </>

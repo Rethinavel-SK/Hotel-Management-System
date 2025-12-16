@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && npm run dev",
-    "client": "cd frontend && npm run dev",
-    "build": "cd frontend && npm run build",
-    "start": "cd backend && npm start",
-    "heroku-postbuild": "cd frontend && npm install && npm run build"
+    "server": "cd Hotel-Management-System/backend && npm run dev",
+    "client": "cd Hotel-Management-System/frontend && npm run dev",
+    "build": "cd Hotel-Management-System/frontend && npm run build",
+    "start": "cd Hotel-Management-System/backend && npm start",
+    "heroku-postbuild": "cd Hotel-Management-System/frontend && npm install && npm run build"
   },
   "dependencies": {
     "concurrently": "^7.6.0"
