@@ -141,7 +141,7 @@ const UserDashboard = () => {
                   <td>{new Date(booking.checkInDate).toLocaleDateString()}</td>
                   <td>{new Date(booking.checkOutDate).toLocaleDateString()}</td>
                   <td>{booking.bookingStatus}</td>
-                  <td>${booking.totalAmount}</td>
+                  <td>₹{booking.totalAmount}</td>
                   <td>
                     {booking.bookingStatus === 'confirmed' && (
                       <button

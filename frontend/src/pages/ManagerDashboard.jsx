@@ -127,7 +127,7 @@ const ManagerDashboard = () => {
                 <tr key={room._id}>
                   <td>{room.roomNumber}</td>
                   <td>{room.type}</td>
-                  <td>${room.price}</td>
+                  <td>₹{room.price}</td>
                   <td>{room.availability ? 'Available' : 'Booked'}</td>
                 </tr>
               ))}
@@ -159,7 +159,7 @@ const ManagerDashboard = () => {
                   <td>{new Date(booking.checkInDate).toLocaleDateString()}</td>
                   <td>{new Date(booking.checkOutDate).toLocaleDateString()}</td>
                   <td>{booking.bookingStatus}</td>
-                  <td>${booking.totalAmount}</td>
+                  <td>₹{booking.totalAmount}</td>
                   <td>
                     {booking.bookingStatus === 'confirmed' && (
                       <button

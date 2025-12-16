@@ -7,6 +7,7 @@ import { AuthProvider } from './components/common/AuthContext';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import Navbar from './components/common/Navbar';
 
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/AdminDashboard';
@@ -23,6 +24,7 @@ function App() {
           <Navbar />
           <main className="main-content">
             <Routes>
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               
@@ -44,7 +46,6 @@ function App() {
                 </ProtectedRoute>
               } />
               
-              <Route path="/" element={<Navigate to="/login" replace />} />
               <Route path="/unauthorized" element={<div>Unauthorized Access</div>} />
             </Routes>
           </main>

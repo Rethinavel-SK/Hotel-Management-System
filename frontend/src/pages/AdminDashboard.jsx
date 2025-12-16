@@ -85,7 +85,7 @@ const AdminDashboard = () => {
         <div className="stat-card">
           <DollarSign size={24} />
           <div>
-            <h3>${data.revenue.totalRevenue}</h3>
+            <h3>₹{data.revenue.totalRevenue}</h3>
             <p>Total Revenue</p>
           </div>
         </div>
@@ -141,7 +141,7 @@ const AdminDashboard = () => {
                   <td>{new Date(booking.checkInDate).toLocaleDateString()}</td>
                   <td>{new Date(booking.checkOutDate).toLocaleDateString()}</td>
                   <td>{booking.bookingStatus}</td>
-                  <td>${booking.totalAmount}</td>
+                  <td>₹{booking.totalAmount}</td>
                 </tr>
               ))}
             </tbody>
