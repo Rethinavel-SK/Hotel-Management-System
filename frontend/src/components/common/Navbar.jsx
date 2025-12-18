@@ -1,10 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
-import { LogOut, User } from 'lucide-react';
+import { LogOut, User, ArrowLeft } from 'lucide-react';
+
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 const Navbar = () => {
   const { user, logout } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
 
   const getDashboardLink = () => {
     if (!user) return '/';
@@ -23,7 +33,12 @@ const Navbar = () => {
           Grand Hotel
         </Link>
         <div className="nav-menu">
-          {user ? (
+          {isAuthPage ? (
+            <button onClick={() => navigate('/')} className="back-btn">
+              <ArrowLeft size={20} />
+              <span>Back to Home</span>
+            </button>
+          ) : user ? (
             <>
               <Link to={getDashboardLink()} className="nav-link">Dashboard</Link>
               <div className="nav-user">
@@ -37,13 +52,13 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Link to="/" className="nav-link">Home</Link>
-              <Link to="/#welcome" className="nav-link">About</Link>
-              <Link to="/#room-types" className="nav-link">Rooms</Link>
-              <Link to="/#available-rooms" className="nav-link">Available</Link>
-              <Link to="/#floating-features" className="nav-link">Services</Link>
-              <Link to="/#hotel-gallery" className="nav-link">Gallery</Link>
-              <Link to="/#contact" className="nav-link">Contact</Link>
+              <button onClick={() => scrollToSection('hero')} className="nav-link">Home</button>
+              <button onClick={() => scrollToSection('welcome')} className="nav-link">About</button>
+              <button onClick={() => scrollToSection('room-types')} className="nav-link">Rooms</button>
+              <button onClick={() => scrollToSection('available-rooms')} className="nav-link">Available</button>
+              <button onClick={() => scrollToSection('floating-features')} className="nav-link">Services</button>
+              <button onClick={() => scrollToSection('hotel-gallery')} className="nav-link">Gallery</button>
+              <button onClick={() => scrollToSection('contact')} className="nav-link">Contact</button>
               <Link to="/login" className="nav-link">Login</Link>
               <Link to="/register" className="nav-link">Sign Up</Link>
             </>

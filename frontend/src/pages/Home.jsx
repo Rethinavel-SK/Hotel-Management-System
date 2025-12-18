@@ -281,7 +281,7 @@ const Home = () => {
                   <li>Marble bathroom with rainfall shower</li>
                   <li>Complimentary WiFi & minibar</li>
                 </ul>
-                <div className="price-range">From ₹150/night</div>
+                <div className="price-range">From ₹2,500/night</div>
               </div>
             </div>
             
@@ -297,7 +297,7 @@ const Home = () => {
                   <li>Separate work area with ergonomic chair</li>
                   <li>Premium bathroom amenities</li>
                 </ul>
-                <div className="price-range">From ₹220/night</div>
+                <div className="price-range">From ₹4,000/night</div>
               </div>
             </div>
             
@@ -313,7 +313,7 @@ const Home = () => {
                   <li>Kitchenette with premium appliances</li>
                   <li>Executive lounge access</li>
                 </ul>
-                <div className="price-range">From ₹450/night</div>
+                <div className="price-range">From ₹7,500/night</div>
               </div>
             </div>
             
@@ -329,7 +329,7 @@ const Home = () => {
                   <li>Full kitchen and dining area</li>
                   <li>Personal butler service</li>
                 </ul>
-                <div className="price-range">From ₹800/night</div>
+                <div className="price-range">From ₹12,000/night</div>
               </div>
             </div>
           </div>
@@ -444,14 +444,14 @@ const Home = () => {
               <MapPin size={24} />
               <div>
                 <h4>Location</h4>
-                <p>1 Grand Palace Avenue<br/>Downtown Financial District<br/>New York, NY 10001</p>
+                <p>123 Marine Drive<br/>Nariman Point, Mumbai<br/>Maharashtra 400021, India</p>
               </div>
             </div>
             <div className="contact-item">
               <Phone size={24} />
               <div>
                 <h4>Reservations</h4>
-                <p>+1 (212) 555-GRAND<br/>24/7 Concierge Available</p>
+                <p>+91 22 6666-7777<br/>24/7 Concierge Available</p>
               </div>
             </div>
             <div className="contact-item">
@@ -463,7 +463,7 @@ const Home = () => {
             </div>
           </div>
           <div className="emergency-contact">
-            <p><strong>Emergency Contact:</strong> +1 (212) 555-0911 (24/7)</p>
+            <p><strong>Emergency Contact:</strong> +91 22 2222-0911 (24/7)</p>
           </div>
         </div>
       </section>
